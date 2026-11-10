@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atmosphère Décoration Dakar | Décoration, mobilier sur mesure &amp; artisanat aux Almadies</title>
+<meta name="description" content="Atmosphère Décoration Dakar, boutique d'art et d'artisanat aux Almadies : décoration d'intérieur, mobilier sur mesure, luminaires, tableaux et accessoires de maison faits au Sénégal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Couleurs reprises de la boutique : vert anis du logo et du fauteuil, terre cuite, bois, murs blancs */
+    --lime: #c8d43a;
+    --lime-soft: #eef2c2;
+    --olive: #5d6233;
+    --terra: #b5562f;
+    --terra-dark: #8a3d1f;
+    --wood: #8a5a36;
+    --linen: #f7f3ec;
+    --paper: #fffdf9;
+    --ink: #2a241e;
+    --muted: #6e655b;
+    --line: #e6ddcf;
+    --wa: #25d366;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Inter", system-ui, sans-serif; color: var(--ink); background: var(--linen); line-height: 1.65; overflow-x: hidden; }
+  h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; line-height: 1.1; }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; }
+  .wrap { width: min(1180px, 100% - 32px); margin-inline: auto; }
+  section { padding: 104px 0; scroll-margin-top: 70px; position: relative; }
+  .eyebrow { text-transform: uppercase; letter-spacing: .2em; font-size: .74rem; font-weight: 600; color: var(--terra); }
+  .title { font-size: clamp(2.1rem, 4.4vw, 3.3rem); margin: 12px 0 18px; }
+  .title em { font-style: italic; font-weight: 400; color: var(--terra); }
+  .lead { color: var(--muted); max-width: 600px; font-size: 1.05rem; }
+
+  .demo-bar { background: var(--ink); color: #e9e2d6; text-align: center; font-size: .78rem; padding: 6px 16px; }
+
+  /* Navigation */
+  header { position: sticky; top: 0; z-index: 50; background: rgba(247,243,236,.92); backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border-color .3s, box-shadow .3s; }
+  header.scrolled { border-color: var(--line); box-shadow: 0 8px 30px rgba(42,36,30,.06); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand .dot { width: 42px; height: 42px; border-radius: 50%; background: var(--lime); display: grid; place-items: center; font-family: "Fraunces", serif; font-style: italic; font-size: 1.2rem; color: var(--ink); }
+  .brand b { display: block; font-family: "Fraunces", serif; font-size: 1.25rem; line-height: 1; }
+  .brand small { font-size: .64rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+  .nav ul { display: flex; gap: 30px; list-style: none; }
+  .nav ul a { text-decoration: none; font-size: .92rem; font-weight: 500; position: relative; }
+  .nav ul a::after { content: ""; position: absolute; left: 0; bottom: -5px; width: 100%; height: 2px; background: var(--lime); transform: scaleX(0); transform-origin: right; transition: transform .35s; }
+  .nav ul a:hover::after { transform: scaleX(1); transform-origin: left; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; border-radius: 999px; font-weight: 600; font-size: .92rem; text-decoration: none; border: 0; cursor: pointer; transition: transform .25s, box-shadow .25s, background .25s; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(42,36,30,.18); }
+  .btn-dark { background: var(--ink); color: #fff; }
+  .btn-dark:hover { background: var(--terra-dark); }
+  .btn-lime { background: var(--lime); color: var(--ink); }
+  .btn-line { border: 1px solid var(--ink); color: var(--ink); background: transparent; }
+  .btn-wa { background: var(--wa); color: #fff; }
+  .menu-toggle { display: none; background: none; border: 1px solid var(--ink); border-radius: 999px; padding: 7px 16px; font: 600 .8rem "Inter", sans-serif; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; color: var(--ink); }
+
+  /* Hero */
+  .hero { padding: 56px 0 96px; overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: center; }
+  .hero h1 { font-size: clamp(2.7rem, 6vw, 4.8rem); }
+  .hero h1 em { font-style: italic; font-weight: 400; color: var(--terra); }
+  .hero h1 .hl { position: relative; white-space: nowrap; }
+  .hero h1 .hl::after { content: ""; position: absolute; left: -4px; right: -4px; bottom: .08em; height: .32em; background: var(--lime); z-index: -1; transform: scaleX(0); transform-origin: left; animation: mark 1s .9s cubic-bezier(.2,.7,.2,1) forwards; }
+  @keyframes mark { to { transform: scaleX(1); } }
+  .hero p { color: var(--muted); font-size: 1.1rem; max-width: 480px; margin: 22px 0 34px; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .hero-visual { position: relative; }
+  .hero-photo { border-radius: 28px; overflow: hidden; aspect-ratio: 4/3; box-shadow: 0 40px 80px rgba(42,36,30,.2); clip-path: inset(0 100% 0 0 round 28px); animation: unveil 1.4s .2s cubic-bezier(.7,0,.2,1) forwards; }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.15); animation: settle 2.6s .2s cubic-bezier(.2,.7,.2,1) forwards; }
+  @keyframes unveil { to { clip-path: inset(0 0 0 0 round 28px); } }
+  @keyframes settle { to { transform: scale(1); } }
+  .badge { position: absolute; right: -18px; top: -22px; width: 128px; height: 128px; border-radius: 50%; background: var(--lime); display: grid; place-items: center; text-align: center; font-family: "Fraunces", serif; font-size: .95rem; line-height: 1.2; box-shadow: 0 16px 34px rgba(42,36,30,.18); animation: spinIn 1s 1.2s both cubic-bezier(.2,.7,.2,1.3); }
+  .badge b { display: block; font-size: 1.5rem; font-style: italic; }
+  @keyframes spinIn { from { transform: scale(0) rotate(-90deg); } to { transform: none; } }
+  .tag-card { position: absolute; left: -28px; bottom: 30px; background: var(--paper); border-radius: 16px; padding: 14px 20px; box-shadow: 0 18px 40px rgba(42,36,30,.14); font-size: .85rem; animation: bob 6s ease-in-out infinite; }
+  .tag-card b { display: block; font-family: "Fraunces", serif; font-size: 1.15rem; }
+  @keyframes bob { 50% { transform: translateY(-10px); } }
+
+  .anim { opacity: 0; transform: translateY(22px); animation: fadeUp .9s cubic-bezier(.2,.7,.2,1) forwards; }
+  .a1 { animation-delay: .1s; } .a2 { animation-delay: .25s; } .a3 { animation-delay: .4s; } .a4 { animation-delay: .55s; }
+  @keyframes fadeUp { to { opacity: 1; transform: none; } }
+
+  /* Bandeau */
+  .ribbon { background: var(--ink); color: #fff; overflow: hidden; white-space: nowrap; padding: 18px 0; }
+  .ribbon-track { display: inline-flex; animation: scroll 32s linear infinite; }
+  .ribbon span { font-family: "Fraunces", serif; font-style: italic; font-size: 1.3rem; padding: 0 26px; }
+  .ribbon span::after { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); margin-left: 52px; vertical-align: middle; }
+  @keyframes scroll { to { transform: translateX(-50%); } }
+
+  /* Univers */
+  .univers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 52px; }
+  .u { background: var(--paper); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; transition: transform .4s, box-shadow .4s; }
+  .u:hover { transform: translateY(-8px); box-shadow: 0 24px 50px rgba(42,36,30,.12); }
+  .u .ph { aspect-ratio: 4/3; overflow: hidden; }
+  .u .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s; }
+  .u:hover .ph img { transform: scale(1.08); }
+  .u .tx { padding: 22px 22px 26px; }
+  .u .n { font-family: "Fraunces", serif; font-style: italic; color: var(--terra); }
+  .u h3 { font-size: 1.4rem; margin: 6px 0 8px; }
+  .u p { color: var(--muted); font-size: .92rem; }
+
+  /* Sur mesure */
+  .custom-section { background: var(--olive); color: #fff; overflow: hidden; }
+  .custom { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .custom .eyebrow { color: var(--lime); }
+  .custom .title em { color: var(--lime); }
+  .custom .lead { color: #e3e4cf; }
+  .steps { list-style: none; margin-top: 32px; display: grid; gap: 12px; counter-reset: s; }
+  .steps li { display: flex; gap: 18px; align-items: flex-start; padding: 18px 22px; border: 1px solid rgba(255,255,255,.18); border-radius: 16px; transition: background .3s, transform .3s; }
+  .steps li:hover { background: rgba(255,255,255,.07); transform: translateX(6px); }
+  .steps li::before { counter-increment: s; content: counter(s); flex: 0 0 34px; height: 34px; border-radius: 50%; background: var(--lime); color: var(--ink); display: grid; place-items: center; font-weight: 700; }
+  .steps strong { display: block; }
+  .steps small { color: #d6d8bd; }
+  .custom-photo { border-radius: 26px; overflow: hidden; aspect-ratio: 4/5; box-shadow: 0 40px 80px rgba(0,0,0,.25); }
+  .custom-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* Jardin */
+  .garden { position: relative; border-radius: 32px; overflow: hidden; min-height: 520px; display: flex; align-items: flex-end; color: #fff; }
+  .garden img { position: absolute; inset: 0; width: 100%; height: 120%; object-fit: cover; will-change: transform; }
+  .garden::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(30,26,20,.75) 100%); }
+  .garden .tx { position: relative; z-index: 2; padding: 48px; max-width: 640px; }
+  .garden .eyebrow { color: var(--lime); }
+  .garden .title { color: #fff; }
+  .garden .title em { color: var(--lime); }
+  .garden p { color: #f1ece3; }
+
+  /* Galerie */
+  .gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 230px; gap: 14px; margin-top: 46px; }
+  .g { border-radius: 18px; overflow: hidden; position: relative; cursor: zoom-in; border: 0; padding: 0; background: var(--line); }
+  .g img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s; }
+  .g:hover img { transform: scale(1.07); }
+  .g figcaption { position: absolute; left: 12px; bottom: 12px; background: rgba(255,253,249,.92); padding: 5px 14px; border-radius: 999px; font-size: .82rem; font-weight: 500; transform: translateY(8px); opacity: 0; transition: .4s; }
+  .g:hover figcaption { transform: none; opacity: 1; }
+  .g.big { grid-column: span 2; grid-row: span 2; }
+  .g.tall { grid-row: span 2; }
+  .lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(20,17,14,.92); display: grid; place-items: center; padding: 24px; opacity: 0; pointer-events: none; transition: opacity .3s; }
+  .lightbox.open { opacity: 1; pointer-events: auto; }
+  .lightbox img { max-height: 86vh; border-radius: 12px; transform: scale(.92); transition: transform .35s; }
+  .lightbox.open img { transform: none; }
+  .lightbox button { position: absolute; top: 16px; right: 20px; background: none; border: 0; color: #fff; font-size: 2.2rem; cursor: pointer; }
+
+  /* Expositions */
+  .expo { background: var(--lime-soft); border-radius: 32px; padding: 60px; display: grid; grid-template-columns: 1.3fr .7fr; gap: 40px; align-items: center; position: relative; overflow: hidden; }
+  .expo .ring { position: absolute; right: -80px; top: -80px; width: 300px; height: 300px; border-radius: 50%; border: 40px solid rgba(200,212,58,.35); pointer-events: none; animation: turn 30s linear infinite; }
+  @keyframes turn { to { transform: rotate(360deg); } }
+  .expo-actions { display: flex; flex-direction: column; gap: 12px; position: relative; }
+
+  /* Contact */
+  .contact-section { background: var(--paper); }
+  .contact { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: start; }
+  .info { list-style: none; display: grid; gap: 20px; margin-top: 30px; }
+  .info li { border-left: 3px solid var(--lime); padding-left: 16px; }
+  .info strong { display: block; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; }
+  .info span, .info a { color: var(--muted); }
+  .map { margin-top: 30px; width: 100%; height: 240px; border: 0; border-radius: 20px; }
+  .form { background: var(--linen); border: 1px solid var(--line); border-radius: 26px; padding: 36px; display: grid; gap: 16px; }
+  .form h3 { font-size: 1.8rem; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  label { font-size: .8rem; font-weight: 600; display: grid; gap: 6px; }
+  input, select, textarea { font: inherit; padding: 13px 15px; border-radius: 12px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); width: 100%; transition: border-color .2s, box-shadow .2s; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--olive); box-shadow: 0 0 0 4px rgba(200,212,58,.35); }
+  .form-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  footer { background: var(--ink); color: #cfc6b8; padding: 60px 0 34px; font-size: .9rem; }
+  .foot { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; }
+  footer .brand b { color: #fff; }
+  footer h4 { color: #fff; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  footer a { text-decoration: none; }
+  footer a:hover { color: #fff; }
+  .copy { margin-top: 44px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.12); font-size: .8rem; }
+
+  .wa-float { position: fixed; right: 18px; bottom: 18px; z-index: 60; padding: 13px 24px; border-radius: 999px; background: var(--wa); color: #fff; font-weight: 600; font-size: .9rem; text-decoration: none; box-shadow: 0 12px 28px rgba(0,0,0,.2); transition: transform .25s; }
+  .wa-float:hover { transform: translateY(-3px); }
+
+  /* Apparition au défilement */
+  .js .reveal { opacity: 0; transform: translateY(36px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
+  .js .reveal.left { transform: translateX(-44px); }
+  .js .reveal.right { transform: translateX(44px); }
+  .js .reveal.zoom { transform: scale(.94); }
+  .js .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 980px) {
+    section { padding: 72px 0; }
+    .nav ul { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--linen); flex-direction: column; gap: 0; padding: 8px 16px 18px; border-bottom: 1px solid var(--line); }
+    .nav ul.open { display: flex; }
+    .nav ul a { display: block; padding: 12px 0; }
+    .menu-toggle { display: block; }
+    .nav .btn { display: none; }
+    .hero { padding-top: 32px; }
+    .hero-grid, .custom, .contact { grid-template-columns: 1fr; gap: 48px; }
+    .badge { right: 8px; top: -30px; width: 108px; height: 108px; font-size: .85rem; }
+    .tag-card { left: 12px; bottom: 16px; }
+    .univers { grid-template-columns: 1fr 1fr; }
+    .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 170px; }
+    .expo { grid-template-columns: 1fr; padding: 40px 28px; }
+    .garden .tx { padding: 32px 24px; }
+    .foot { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .univers, .row, .form-actions { grid-template-columns: 1fr; }
+    .garden { min-height: 460px; }
+    .form { padding: 28px 22px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .anim, .js .reveal { opacity: 1; transform: none; }
+    .hero-photo { clip-path: none; }
+    .hero-photo img { transform: none; }
+    .hero h1 .hl::after { transform: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<div class="demo-bar">Maquette de démonstration réalisée pour Atmosphère Décoration Dakar – horaires et informations à valider avec la boutique</div>
+
+<header id="top">
+  <nav class="nav wrap" aria-label="Navigation principale">
+    <a href="#accueil" class="brand" aria-label="Atmosphère Décoration Dakar – accueil">
+      <span class="dot" aria-hidden="true">A</span>
+      <span><b>Atmosphère</b><small>Décoration · Dakar</small></span>
+    </a>
+    <ul id="nav-links">
+      <li><a href="#univers">Nos univers</a></li>
+      <li><a href="#sur-mesure">Sur mesure</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#expositions">Expositions</a></li>
+      <li><a href="#contact">Nous rendre visite</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-dark">Nous contacter</a>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-controls="nav-links" aria-expanded="false">Menu</button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="accueil">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow anim a1">Art &amp; artisanat du Sénégal · Les Almadies</p>
+        <h1 class="anim a2">Une maison qui vous <span class="hl">ressemble</span>, <em>faite ici</em></h1>
+        <p class="anim a3">Décoration d'intérieur, mobilier sur mesure, luminaires et accessoires de maison, imaginés et fabriqués avec les artisans et artistes du Sénégal.</p>
+        <div class="hero-actions anim a4">
+          <a class="btn btn-dark" href="#univers">Découvrir la boutique</a>
+          <a class="btn btn-line" href="#sur-mesure">Un projet sur mesure</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-photo"><img src="images/showroom.jpg" alt="Le showroom d'Atmosphère : fauteuil vert anis, tableaux encadrés de bois, lampadaire en fibre naturelle"></div>
+        <div class="badge" aria-hidden="true"><div><b>Made in</b>Sénégal</div></div>
+        <div class="tag-card"><b>5 100 +</b>passionnés de déco nous suivent</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ribbon" aria-hidden="true">
+    <div class="ribbon-track">
+      <span>Mobilier sur mesure</span><span>Luminaires</span><span>Tableaux &amp; art mural</span><span>Coussins en wax</span><span>Vannerie</span><span>Idées cadeaux</span>
+      <span>Mobilier sur mesure</span><span>Luminaires</span><span>Tableaux &amp; art mural</span><span>Coussins en wax</span><span>Vannerie</span><span>Idées cadeaux</span>
+    </div>
+  </div>
+
+  <section id="univers">
+    <div class="wrap">
+      <p class="eyebrow reveal">Nos univers</p>
+      <h2 class="title reveal" style="--d:.1s">Des pièces uniques, <em>pour chaque pièce</em></h2>
+      <p class="lead reveal" style="--d:.2s">Du canapé fabriqué à vos dimensions au petit magnet peint à la main, chaque objet raconte un savoir-faire sénégalais.</p>
+      <div class="univers">
+        <article class="u reveal" style="--d:.1s"><div class="ph"><img src="images/mobilier.jpg" alt="Banquette en bois, coussins orange et wax, tables gigognes peintes" loading="lazy"></div><div class="tx"><span class="n">01</span><h3>Mobilier sur mesure</h3><p>Banquettes, fauteuils, tables gigognes : en bois et métal, à vos dimensions.</p></div></article>
+        <article class="u reveal" style="--d:.2s"><div class="ph"><img src="images/showroom.jpg" alt="Lampadaire en fibre naturelle et tableaux du showroom" loading="lazy" style="object-position:85% 50%"></div><div class="tx"><span class="n">02</span><h3>Luminaires &amp; art mural</h3><p>Lampes en fibres naturelles, tableaux et cadres en bois recyclé.</p></div></article>
+        <article class="u reveal" style="--d:.3s"><div class="ph"><img src="images/mugs.jpg" alt="Fauteuils tapissés de wax et mugs illustrés" loading="lazy"></div><div class="tx"><span class="n">03</span><h3>Textiles &amp; accessoires</h3><p>Coussins en wax, fauteuils retapissés, vannerie et objets du quotidien.</p></div></article>
+        <article class="u reveal" style="--d:.4s"><div class="ph"><img src="images/tote-bags.jpg" alt="Tote bags illustrés de portraits et de cars rapides" loading="lazy"></div><div class="tx"><span class="n">04</span><h3>Idées cadeaux</h3><p>Tote bags, mugs et magnets illustrés : des souvenirs du Sénégal à offrir.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="custom-section" id="sur-mesure">
+    <div class="wrap custom">
+      <div>
+        <p class="eyebrow reveal">Sur mesure</p>
+        <h2 class="title reveal" style="--d:.1s">Votre idée, <em>nos artisans</em></h2>
+        <p class="lead reveal" style="--d:.2s">Un salon à meubler, une terrasse à aménager, un restaurant ou un hôtel à décorer ? Nous concevons avec vous des pièces adaptées à votre espace et à votre style.</p>
+        <ol class="steps">
+          <li class="reveal" style="--d:.25s"><div><strong>Échange et conseil</strong><small>Vous nous parlez de votre espace, de vos envies et de vos contraintes.</small></div></li>
+          <li class="reveal" style="--d:.35s"><div><strong>Choix des matières</strong><small>Bois, métal, tissus wax, fibres naturelles : nous vous montrons les possibilités.</small></div></li>
+          <li class="reveal" style="--d:.45s"><div><strong>Fabrication à Dakar</strong><small>Vos meubles sont réalisés par des artisans sénégalais, à vos mesures.</small></div></li>
+        </ol>
+        <a class="btn btn-lime reveal" style="--d:.55s;margin-top:28px" href="#contact">Parler de mon projet</a>
+      </div>
+      <div class="custom-photo reveal right" style="--d:.2s"><img src="images/mobilier.jpg" alt="Banquette sur mesure et tables gigognes peintes à la main" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section style="padding-bottom:0">
+    <div class="wrap">
+      <div class="garden reveal zoom">
+        <img src="images/jardin.jpg" alt="Le jardin d'Atmosphère et ses parapluies colorés devant le salon extérieur" loading="lazy" id="garden-img">
+        <div class="tx">
+          <p class="eyebrow">Le jardin</p>
+          <h2 class="title">Flânez à <em>l'ombre</em></h2>
+          <p>Derrière la boutique, un jardin et des salons extérieurs où découvrir nos meubles de terrasse en situation, au calme des Almadies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerie">
+    <div class="wrap">
+      <p class="eyebrow reveal">Galerie</p>
+      <h2 class="title reveal" style="--d:.1s">Un aperçu de <em>la boutique</em></h2>
+      <div class="gallery">
+        <figure class="g big reveal zoom"><img src="images/showroom.jpg" alt="Le showroom d'Atmosphère" loading="lazy"><figcaption>Le showroom</figcaption></figure>
+        <figure class="g tall reveal zoom" style="--d:.1s"><img src="images/mobilier.jpg" alt="Banquette et tables gigognes" loading="lazy"><figcaption>Mobilier</figcaption></figure>
+        <figure class="g reveal zoom" style="--d:.2s"><img src="images/magnets.jpg" alt="Magnets peints à la main" loading="lazy"><figcaption>Magnets peints</figcaption></figure>
+        <figure class="g reveal zoom" style="--d:.3s"><img src="images/mugs.jpg" alt="Mugs illustrés et fauteuils en wax" loading="lazy"><figcaption>Mugs &amp; fauteuils</figcaption></figure>
+        <figure class="g reveal zoom" style="--d:.1s"><img src="images/tote-bags.jpg" alt="Tote bags illustrés" loading="lazy"><figcaption>Tote bags</figcaption></figure>
+        <figure class="g reveal zoom" style="--d:.2s"><img src="images/jardin.jpg" alt="Le jardin aux parapluies" loading="lazy"><figcaption>Le jardin</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="expositions" style="padding-top:0">
+    <div class="wrap">
+      <div class="expo reveal">
+        <span class="ring" aria-hidden="true"></span>
+        <div style="position:relative">
+          <p class="eyebrow">Expositions</p>
+          <h2 class="title">Un lieu ouvert <em>aux artistes</em></h2>
+          <p class="lead">Atmosphère accueille régulièrement des expositions et des vernissages d'artistes, en entrée libre. Laissez-nous votre contact pour être invité au prochain.</p>
+        </div>
+        <div class="expo-actions">
+          <a class="btn btn-dark" href="#contact">Être invité au prochain vernissage</a>
+          <a class="btn btn-line" href="https://www.facebook.com/atmospheredakar/" target="_blank" rel="noopener">Suivre sur Facebook</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="wrap contact">
+      <div>
+        <p class="eyebrow reveal">Nous rendre visite</p>
+        <h2 class="title reveal" style="--d:.1s">Passez nous voir <em>aux Almadies</em></h2>
+        <p class="lead reveal" style="--d:.2s">Une question sur un objet, un devis pour du mobilier sur mesure ? Écrivez-nous, nous vous répondons rapidement.</p>
+        <ul class="info">
+          <li class="reveal" style="--d:.25s"><strong>Adresse</strong><span>Route des Almadies, derrière l'UBA, Dakar</span></li>
+          <li class="reveal" style="--d:.35s"><strong>Téléphone</strong><a href="tel:+221776510113">+221 77 651 01 13</a></li>
+          <li class="reveal" style="--d:.45s"><strong>E-mail</strong><a href="mailto:atmospheredakar@gmail.com">atmospheredakar@gmail.com</a></li>
+          <li class="reveal" style="--d:.55s"><strong>Horaires</strong><span>À confirmer avec la boutique</span></li>
+        </ul>
+        <iframe class="map reveal" title="Carte des Almadies" loading="lazy" src="https://www.google.com/maps?q=Route+des+Almadies,+Dakar&z=15&output=embed"></iframe>
+      </div>
+      <form class="form reveal right" id="contact-form">
+        <h3>Votre demande</h3>
+        <label>Je suis intéressé(e) par
+          <select name="sujet">
+            <option>Du mobilier sur mesure</option>
+            <option>Un luminaire ou un tableau</option>
+            <option>Des accessoires ou textiles</option>
+            <option>Des idées cadeaux</option>
+            <option>Le prochain vernissage</option>
+            <option>Autre chose</option>
+          </select>
+        </label>
+        <div class="row">
+          <label>Nom<input name="nom" required placeholder="Votre nom"></label>
+          <label>Téléphone<input name="tel" type="tel" placeholder="77 000 00 00"></label>
+        </div>
+        <label>Votre message<textarea name="message" rows="4" required placeholder="Dimensions, style, couleurs, budget…"></textarea></label>
+        <div class="form-actions">
+          <button class="btn btn-wa" type="submit" data-via="wa">Envoyer sur WhatsApp</button>
+          <button class="btn btn-dark" type="submit" data-via="mail">Envoyer par e-mail</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a href="#accueil" class="brand"><span class="dot" aria-hidden="true">A</span><span><b>Atmosphère</b><small>Décoration · Dakar</small></span></a>
+      <p style="margin-top:16px;max-width:320px">Décoration d'intérieur, mobilier sur mesure, luminaires et accessoires de maison. Art &amp; artisanat du Sénégal.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p><a href="tel:+221776510113">+221 77 651 01 13</a></p>
+      <p><a href="mailto:atmospheredakar@gmail.com">atmospheredakar@gmail.com</a></p>
+      <p>Route des Almadies, derrière l'UBA</p>
+    </div>
+    <div>
+      <h4>Suivez-nous</h4>
+      <p><a href="https://www.facebook.com/atmospheredakar/" target="_blank" rel="noopener">Facebook</a></p>
+      <p><a href="https://wa.me/221776510113" target="_blank" rel="noopener">WhatsApp</a></p>
+    </div>
+  </div>
+  <p class="wrap copy">© <span id="year"></span> Atmosphère Décoration Dakar · Tous droits réservés</p>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo agrandie">
+  <button aria-label="Fermer">×</button>
+  <img alt="">
+</div>
+
+<a class="wa-float" href="https://wa.me/221776510113" target="_blank" rel="noopener">WhatsApp</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const header = document.getElementById('top');
+  const garden = document.getElementById('garden-img');
+  const onScroll = () => {
+    header.classList.toggle('scrolled', scrollY > 20);
+    // Léger effet de parallaxe sur la photo du jardin
+    const r = garden.parentElement.getBoundingClientRect();
+    if (r.bottom > 0 && r.top < innerHeight) garden.style.transform = `translateY(${(r.top / innerHeight) * -60 - 20}px)`;
+  };
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const toggle = document.querySelector('.menu-toggle');
+  const links = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => toggle.setAttribute('aria-expanded', links.classList.toggle('open')));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Apparition au défilement
+  const io = new IntersectionObserver(entries => entries.forEach(en => {
+    if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+  }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Galerie en grand
+  const lb = document.getElementById('lightbox');
+  const lbImg = lb.querySelector('img');
+  document.querySelectorAll('.g').forEach(fig => fig.addEventListener('click', () => {
+    const img = fig.querySelector('img');
+    lbImg.src = img.src; lbImg.alt = img.alt;
+    lb.classList.add('open');
+  }));
+  const closeLb = () => lb.classList.remove('open');
+  lb.addEventListener('click', e => { if (e.target !== lbImg) closeLb(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+
+  // Demande par WhatsApp ou par e-mail
+  document.getElementById('contact-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = new FormData(e.target);
+    let msg = `Bonjour Atmosphère, je suis intéressé(e) par : ${f.get('sujet')}.\nNom : ${f.get('nom')}`;
+    if (f.get('tel')) msg += `\nTéléphone : ${f.get('tel')}`;
+    msg += `\nMessage : ${f.get('message')}`;
+    if (e.submitter && e.submitter.dataset.via === 'mail') {
+      location.href = 'mailto:atmospheredakar@gmail.com?subject=' + encodeURIComponent('Demande : ' + f.get('sujet')) + '&body=' + encodeURIComponent(msg);
+    } else {
+      window.open('https://wa.me/221776510113?text=' + encodeURIComponent(msg), '_blank');
+    }
+  });
+</script>
+</body>
+</html>
